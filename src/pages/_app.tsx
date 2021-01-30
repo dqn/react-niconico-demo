@@ -1,0 +1,27 @@
+import type { AppProps } from "next/app";
+import Head from "next/head";
+import * as React from "react";
+
+import "tailwindcss/tailwind.css";
+
+const App: React.FC<AppProps> = ({ Component, pageProps }) => {
+  return (
+    <>
+      <Head>
+        <title>react-niconico demo</title>
+      </Head>
+
+      <Component {...pageProps} />
+      <footer className="text-center text-xs py-4">© 2021 DQN</footer>
+
+      <style global jsx>{`
+        html {
+          font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+            "Yu Gothic", "YuGothic", Verdana, Meiryo, sans-serif;
+        }
+      `}</style>
+    </>
+  );
+};
+
+export default App;
